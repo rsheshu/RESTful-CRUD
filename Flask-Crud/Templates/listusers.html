@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Users</title>
+	<body>
+		<div>
+			<h1>List all users </h1>
+		</div>
+		<table  class="table" border="4">
+			<tr>
+				<td>ID</td>
+				<td>Name</td>
+				<td>First Name</td>
+				<td>Last Name </td>
+				<td>Address</td>
+			</tr>
+			{% for person in persons %}
+				<tr>
+					<td>{{ person._users_id }}</td>
+					<td>{{ person.name }}</td>
+					<td>{{ person.fname }}</td>
+					<td>{{ person.lname }}</td>
+					<td>{{ address[person._users_id] }}</td>
+				</tr>
+			{% endfor %}
+		</table><br>
+		<a href="{{ url_for('home') }}"><input type="button" value="OK"></a>
+	</body>
+</html>
